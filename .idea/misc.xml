@@ -7,11 +7,18 @@
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/edit_text_bg.xml" value="0.1" />
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/view_bg.xml" value="0.1" />
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout-w1240dp/signup_tab_fragment.xml" value="0.2857142857142857" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout-w936dp/fragment_on_boarding2.xml" value="0.2" />
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_onboard.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_onboarding.xml" value="0.20863616930312098" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_splash.xml" value="0.16" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding2.xml" value="0.20863616930312098" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding3.xml" value="0.20863616930312098" />
         <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
-        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/login_tab_fragment.xml" value="0.12335359675785208" />
-        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/signup_tab_fragment.xml" value="0.25416666666666665" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/login_tab_fragment.xml" value="0.264" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/signup_tab_fragment.xml" value="0.1" />
       </map>
     </option>
   </component>

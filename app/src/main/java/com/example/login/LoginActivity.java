@@ -5,14 +5,18 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.login.databinding.ActivityLoginBinding;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     TabLayout tabLayout;
     ViewPager viewPager;
+    FirebaseAuth mAuth;
 
     ActivityLoginBinding binding;
 
@@ -23,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        mAuth = FirebaseAuth.getInstance();
         tabLayout = binding.tabLayout;
         viewPager = binding.viewPager;
 
@@ -35,7 +40,6 @@ public class LoginActivity extends AppCompatActivity {
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
-
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition());
@@ -49,6 +53,19 @@ public class LoginActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
-
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser cUser = mAuth.getCurrentUser();
+        if (cUser != null){
+            String username = "Вы вошли как" + cUser.getEmail();
+            Toast.makeText(this, "User not null", Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(this, "User is null", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 }
