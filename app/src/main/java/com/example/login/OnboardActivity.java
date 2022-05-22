@@ -9,7 +9,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.login.databinding.ActivityLoginBinding;
 import com.example.login.databinding.ActivityOnboardBinding;
 import com.ramotion.paperonboarding.PaperOnboardingFragment;
 import com.ramotion.paperonboarding.PaperOnboardingPage;
@@ -28,19 +27,17 @@ public class OnboardActivity extends AppCompatActivity {
         setContentView(view);
         fragmentManager = getSupportFragmentManager();
 
-//        binding.continueBtn.setVisibility(View.GONE);
-
-        final PaperOnboardingFragment paperOnboardingFragment = PaperOnboardingFragment.newInstance(getDataForBoarding());
+        final PaperOnboardingFragment paperOnboardingFragment = OnboardLastFragment.newInstance(getDataForBoarding());
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.fragment_container, paperOnboardingFragment);
         fragmentTransaction.commit();
 
-//        binding.continueBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(OnboardActivity.this, LoginActivity.class));
-//            }
-//        });
+        binding.continueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(OnboardActivity.this, LoginActivity.class));
+            }
+        });
     }
 
     private ArrayList<PaperOnboardingPage> getDataForBoarding() {
@@ -54,10 +51,6 @@ public class OnboardActivity extends AppCompatActivity {
         ArrayList<PaperOnboardingPage> elements = new ArrayList<>();
         elements.add(src1);
         elements.add(src2);
-//        if (true){
-//            elements.add(src3);
-//            binding.continueBtn.setVisibility(View.VISIBLE);
-//        }
         elements.add(src3);
         return elements;
     }
