@@ -44,12 +44,12 @@ public class OnboardActivity extends AppCompatActivity {
     }
 
     private ArrayList<PaperOnboardingPage> getDataForBoarding() {
-        PaperOnboardingPage src1 = new PaperOnboardingPage("Hotels", "All hotels and hostels are sorted by hostility ratings",
-                Color.parseColor("#ffb174"), R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground);
-        PaperOnboardingPage src2 = new PaperOnboardingPage("Hotels", "All hotels and hostels are sorted by hostility ratings",
-                Color.parseColor("#ffb174"), R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground);
-        PaperOnboardingPage src3 = new PaperOnboardingPage("Hotels", "All hotels and hostels are sorted by hostility ratings",
-                Color.parseColor("#ffb174"), R.drawable.ic_launcher_background, R.drawable.ic_launcher_foreground);
+        PaperOnboardingPage src1 = new PaperOnboardingPage("Бронируйте", "All hotels and hostels are sorted by hostility ratings",
+                Color.parseColor("#ffffff"), R.drawable.refund_bro, R.drawable.logo);
+        PaperOnboardingPage src2 = new PaperOnboardingPage("Покупайте", "All hotels and hostels are sorted by hostility ratings",
+                Color.parseColor("#ffffff"), R.drawable.successful_purchase_bro, R.drawable.logo);
+        PaperOnboardingPage src3 = new PaperOnboardingPage("Отслеживайте", "All hotels and hostels are sorted by hostility ratings",
+                Color.parseColor("#ffffff"), R.drawable.confirmed_bro, R.drawable.logo);
 
         ArrayList<PaperOnboardingPage> elements = new ArrayList<>();
         elements.add(src1);
