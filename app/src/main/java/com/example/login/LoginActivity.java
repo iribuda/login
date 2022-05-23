@@ -66,6 +66,4 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "User is null", Toast.LENGTH_SHORT).show();
         }
     }
-
-
 }
