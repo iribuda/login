@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/button_bg.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/confirmed_bro.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/edit_text_bg.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/refund_bro.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/successful_purchase_bro.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/drawable/view_bg.xml" value="0.1405" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/layout/activity_login.xml" value="0.17831813576494426" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/layout/activity_splash.xml" value="0.33" />
+        <entry key="..\:/Desktop/login-version3/app/src/main/res/layout/login_tab_fragment.xml" value="0.17831813576494426" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/button_bg.xml" value="0.1" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/confirmed_bro.xml" value="0.1575" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/edit_text_bg.xml" value="0.1" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1575" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1575" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/reserve.xml" value="0.1575" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/drawable/view_bg.xml" value="0.1" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout-w1240dp/signup_tab_fragment.xml" value="0.2857142857142857" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout-w936dp/fragment_on_boarding2.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_onboard.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_onboarding.xml" value="0.20863616930312098" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/activity_splash.xml" value="0.16" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding1.xml" value="0.2" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding2.xml" value="0.20863616930312098" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_on_boarding3.xml" value="0.20863616930312098" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_onboard_last.xml" value="0.17271078875793291" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/fragment_register.xml" value="0.25416666666666665" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/login_tab_fragment.xml" value="0.264" />
+        <entry key="..\:/my/studying/mobile/login/app/src/main/res/layout/signup_tab_fragment.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
