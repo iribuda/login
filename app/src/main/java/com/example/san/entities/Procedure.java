@@ -18,6 +18,8 @@ public class Procedure {
 
     private String endAt;
 
+    private int isBought;
+
     private int photoResource;
 
     public Procedure(String name, int price, String startAt, String endAt, int photoResource) {
@@ -54,5 +56,13 @@ public class Procedure {
 
     public int getPhotoResource() {
         return photoResource;
+    }
+
+    public int getIsBought() {
+        return isBought;
+    }
+
+    public void setIsBought(int isBought) {
+        this.isBought = isBought;
     }
 }

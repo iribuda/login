@@ -15,11 +15,13 @@ public class ProcedureRepository {
 
     private ProcedureDao procedureDao;
     private LiveData<List<Procedure>> allProcedures;
+    private LiveData<List<Procedure>> boughtProcedures;
 
     public ProcedureRepository(Application application){
         AppDatabase database = AppDatabase.getInstance(application);
         procedureDao = database.procedureDao();
         allProcedures = procedureDao.getAll();
+        boughtProcedures = procedureDao.getBought();
     }
 
     public void insert(Procedure procedure){
@@ -36,6 +38,10 @@ public class ProcedureRepository {
 
     public LiveData<List<Procedure>> getAllProcedures() {
         return allProcedures;
+    }
+
+    public LiveData<List<Procedure>> getBoughtProcedures() {
+        return boughtProcedures;
     }
 
     private static class InsertProcedureAsyncTask extends AsyncTask<Procedure, Void, Void> {

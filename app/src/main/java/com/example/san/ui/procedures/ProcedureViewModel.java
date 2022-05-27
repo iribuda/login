@@ -5,6 +5,7 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.example.san.entities.Procedure;
 import com.example.san.repositories.ProcedureRepository;
@@ -15,14 +16,18 @@ public class ProcedureViewModel extends AndroidViewModel {
 
     private ProcedureRepository procedureRepository;
     private LiveData<List<Procedure>> allProcedure;
+    private LiveData<List<Procedure>> boughtProcedures;
 
     public ProcedureViewModel(@NonNull Application application) {
         super(application);
         procedureRepository = new ProcedureRepository(application);
         allProcedure = procedureRepository.getAllProcedures();
+        boughtProcedures = procedureRepository.getBoughtProcedures();
     }
 
     public LiveData<List<Procedure>> getAllProcedure() {return allProcedure;}
+
+    public LiveData<List<Procedure>> getBoughtProcedures() {return boughtProcedures;}
 
     public void insert(Procedure procedure){
         procedureRepository.insert(procedure);

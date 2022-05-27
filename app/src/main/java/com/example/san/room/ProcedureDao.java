@@ -26,4 +26,7 @@ public interface ProcedureDao {
     @Query("SELECT * FROM procedure")
     LiveData<List<Procedure>> getAll();
 
+    @Query("SELECT * FROM procedure WHERE isBought=1")
+    LiveData<List<Procedure>> getBought();
+
 }

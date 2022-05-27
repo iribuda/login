@@ -10,13 +10,14 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.san.R;
+import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Procedure;
 
-@Database(entities = {Procedure.class}, version = 3, exportSchema = false)
+@Database(entities = {Procedure.class, BoughtProcedure.class}, version = 7, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
-
+    public abstract BoughtProcedureDao boughtProcedureDao();
     public abstract ProcedureDao procedureDao();
 
     public static synchronized AppDatabase getInstance(Context context){
