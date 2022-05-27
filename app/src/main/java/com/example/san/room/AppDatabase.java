@@ -11,14 +11,16 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.san.R;
 import com.example.san.entities.BoughtProcedure;
+import com.example.san.entities.Hotel;
 import com.example.san.entities.Procedure;
 
-@Database(entities = {Procedure.class, BoughtProcedure.class}, version = 7, exportSchema = false)
+@Database(entities = {Procedure.class, BoughtProcedure.class, Hotel.class}, version = 9, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
     public abstract BoughtProcedureDao boughtProcedureDao();
     public abstract ProcedureDao procedureDao();
+    public abstract HotelDao roomDao();
 
     public static synchronized AppDatabase getInstance(Context context){
         if(instance == null){
@@ -41,9 +43,11 @@ public abstract class AppDatabase extends RoomDatabase {
 
     public static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private ProcedureDao procedureDao;
+        private HotelDao hotelDao;
 
         private PopulateDbAsyncTask(AppDatabase database){
             procedureDao = database.procedureDao();
+            hotelDao = database.roomDao();
         }
 
         @Override
@@ -72,6 +76,11 @@ public abstract class AppDatabase extends RoomDatabase {
 //
 //            Time startTime8 = new Time(19);
 //            Time endTime8 = new Time(21);
+
+            hotelDao.insert(new Hotel(1, "Стандарт одноместный", R.drawable.b1));
+            hotelDao.insert(new Hotel(2, "Стандарт двухместный", R.drawable.b2));
+            hotelDao.insert(new Hotel(3, "Стандарт трехместный", R.drawable.b3));
+            hotelDao.insert(new Hotel(4, "Люкс двухместный", R.drawable.b4));
 
             procedureDao.insert(new Procedure("Акупунктура", 150, "14:00", "15:00", R.drawable.a1));
             procedureDao.insert(new Procedure("Траволечение", 120, "14:00", "15:00", R.drawable.a2));

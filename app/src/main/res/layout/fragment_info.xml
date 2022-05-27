@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.info.InfoFragment">
+    tools:context=".ui.info.InfoFragment"
+    android:orientation="vertical">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/about"
+        android:text="Для индивидуального и семейного отдыха и лечения "
         android:layout_gravity="center"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:layout_marginHorizontal="20dp"/>
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Особенность отдыха в санатории – это возможность заняться собственным здоровьем и совместить лечебные процедуры с привычным отдыхом. "
+        android:textSize="14sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="В наших санаториях постояльцам предлагается широкая лечебно-профилактическая база для лечения различных заболеваний. Разнообразен и выбор процедур и оздоровительных услуг: начиная от физиотерапии, заканчивая ваннами с солью Мертвого моря."
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+</LinearLayout>
