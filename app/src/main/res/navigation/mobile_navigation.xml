@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_procedures">
+
+    <fragment
+        android:id="@+id/navigation_procedures"
+        android:name="com.example.san.ui.procedures.ProceduresFragment"
+        android:label="fragment_procedures"
+        tools:layout="@layout/fragment_procedures" />
+    <fragment
+        android:id="@+id/navigation_rooms"
+        android:name="com.example.san.ui.rooms.HotelsFragment"
+        android:label="fragment_rooms"
+        tools:layout="@layout/fragment_rooms" />
+    <activity
+        android:id="@+id/navigation_profile"
+        android:name="com.example.san.ui.profile.PatientActivity"
+        android:label="activity_patient"
+        tools:layout="@layout/activity_patient" />
+
+</navigation>
