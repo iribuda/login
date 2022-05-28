@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.san.databinding.FragmentBookedRoomBinding;
 import com.example.san.databinding.FragmentRoomsBinding;
+import com.example.san.entities.BookedHotel;
 import com.example.san.entities.Hotel;
 import com.example.san.ui.hotelRooms.HotelAdapter;
 import com.example.san.ui.hotelRooms.HotelViewModel;
@@ -20,14 +21,14 @@ import com.example.san.ui.hotelRooms.HotelViewModel;
 import java.util.List;
 
 public class BookedRoomFragment extends Fragment {
-    private HotelViewModel hotelViewModel;
+    private BookedHotelViewModel bookedHotelViewModel;
     private FragmentBookedRoomBinding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        hotelViewModel = new ViewModelProvider(this).get(HotelViewModel.class);
+        bookedHotelViewModel = new ViewModelProvider(this).get(BookedHotelViewModel.class);
 
         binding = FragmentBookedRoomBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -38,11 +39,11 @@ public class BookedRoomFragment extends Fragment {
 
         final BookedHotelAdapter adapter = new BookedHotelAdapter();
         recyclerView.setAdapter(adapter);
-        hotelViewModel.getReservedRooms().observe(requireActivity(), new Observer<List<Hotel>>() {
+        bookedHotelViewModel.getAllBookedHotels().observe(requireActivity(), new Observer<List<BookedHotel>>() {
             @Override
-            public void onChanged(List<Hotel> hotels) {
-                adapter.setRooms(hotels);
-                adapter.setRoomViewModel(hotelViewModel);
+            public void onChanged(List<BookedHotel> bookedHotels) {
+                adapter.setRooms(bookedHotels);
+                adapter.setRoomViewModel(bookedHotelViewModel);
                 adapter.setBookedRoomFragment(BookedRoomFragment.this);
             }
         });

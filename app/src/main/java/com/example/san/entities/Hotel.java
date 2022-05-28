@@ -16,6 +16,8 @@ public class Hotel {
 
     private int isReserved;
 
+    private String date;
+
     public Hotel(int id, String name, int photoResource) {
         this.id = id;
         this.name = name;
@@ -52,5 +54,13 @@ public class Hotel {
 
     public void setIsReserved(int isReserved) {
         this.isReserved = isReserved;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

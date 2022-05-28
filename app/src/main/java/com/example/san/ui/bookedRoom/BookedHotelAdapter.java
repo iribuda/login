@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.san.databinding.RoomItemBinding;
+import com.example.san.entities.BookedHotel;
 import com.example.san.entities.Hotel;
 import com.example.san.ui.hotelRooms.HotelViewModel;
 import com.example.san.ui.hotelRooms.HotelsFragment;
@@ -19,8 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.RoomHolder>{
-    private List<Hotel> reservedHotels = new ArrayList<>();
-    private HotelViewModel hotelViewModel;
+    private List<BookedHotel> reservedHotels = new ArrayList<>();
+    private BookedHotelViewModel bookedHotelViewModel;
     private BookedRoomFragment bookedRoomFragment;
 
     @NonNull
@@ -33,38 +34,12 @@ public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.
 
     @Override
     public void onBindViewHolder(@NonNull BookedHotelAdapter.RoomHolder holder, int position) {
-        Hotel hotel = reservedHotels.get(position);
+        BookedHotel hotel = reservedHotels.get(position);
 
         holder.binding.hotelName.setText(hotel.getName());
         holder.binding.hotelImage.setImageResource(hotel.getPhotoResource());
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int pos = holder.getAdapterPosition();
-
-                if(pos != RecyclerView.NO_POSITION){
-                    String message = reservedHotels.get(pos).getName() + ", позиция в листе - " + pos;
-                    Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-
-        holder.itemView.setOnLongClickListener(view -> {
-            AlertDialog alertDialog = new AlertDialog.Builder(holder.itemView.getContext()).setMessage("Вы хотите удалить")
-                    .setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int pos) {
-//                            hotelViewModel.delete(hotel);
-                            hotel.setIsReserved(0);
-                            hotelViewModel.update(hotel);
-                            String message = "Комната " + hotel.getName() + " была удалена.";
-                            Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-                        }
-                    }).setNegativeButton("НЕТ", null).create();
-            alertDialog.show();
-            return true;
-        });
+        holder.binding.hotelCardViews.setText(hotel.getDate());
+        holder.binding.hotelBookButton.setVisibility(View.INVISIBLE);
     }
 
     @Override
@@ -81,13 +56,13 @@ public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.
         }
     }
 
-    public void setRooms(List<Hotel> hotels){
+    public void setRooms(List<BookedHotel> hotels){
         this.reservedHotels = hotels;
         notifyDataSetChanged();
     }
 
-    public void setRoomViewModel(HotelViewModel hotelViewModel){
-        this.hotelViewModel = hotelViewModel;
+    public void setRoomViewModel(BookedHotelViewModel hotelViewModel){
+        this.bookedHotelViewModel = hotelViewModel;
         notifyDataSetChanged();
     }
 

@@ -14,13 +14,13 @@ import java.util.List;
 public class HotelRepository {
     private HotelDao hotelDao;
     private LiveData<List<Hotel>> allRooms;
-    private LiveData<List<Hotel>> reservedRooms;
+//    private LiveData<List<Hotel>> reservedRooms;
 
     public HotelRepository(Application application){
         AppDatabase database = AppDatabase.getInstance(application);
         hotelDao = database.roomDao();
         allRooms = hotelDao.getAll();
-        reservedRooms = hotelDao.getReserved();
+//        reservedRooms = hotelDao.getReserved();
     }
 
     public void insert(Hotel hotel){
@@ -39,9 +39,9 @@ public class HotelRepository {
         return allRooms;
     }
 
-    public LiveData<List<Hotel>> getReservedRooms() {
-        return reservedRooms;
-    }
+//    public LiveData<List<Hotel>> getReservedRooms() {
+//        return reservedRooms;
+//    }
 
     private static class InsertRoomAsyncTask extends AsyncTask<Hotel, Void, Void> {
         private HotelDao hotelDao;

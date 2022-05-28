@@ -14,18 +14,18 @@ import java.util.List;
 public class HotelViewModel extends AndroidViewModel {
     private HotelRepository hotelRepository;
     private LiveData<List<Hotel>> allRooms;
-    private LiveData<List<Hotel>> reservedRooms;
+//    private LiveData<List<Hotel>> reservedRooms;
 
     public HotelViewModel(@NonNull Application application) {
         super(application);
         hotelRepository = new HotelRepository(application);
         allRooms = hotelRepository.getAllRooms();
-        reservedRooms = hotelRepository.getReservedRooms();
+//        reservedRooms = hotelRepository.getReservedRooms();
     }
 
     public LiveData<List<Hotel>> getAllRoom() {return allRooms;}
 
-    public LiveData<List<Hotel>> getReservedRooms() {return reservedRooms;}
+//    public LiveData<List<Hotel>> getReservedRooms() {return reservedRooms;}
 
     public void insert(Hotel hotel){
         hotelRepository.insert(hotel);

@@ -26,6 +26,6 @@ public interface HotelDao {
     @Query("SELECT * FROM hotel")
     LiveData<List<Hotel>> getAll();
 
-    @Query("SELECT * FROM hotel WHERE isReserved=1")
-    LiveData<List<Hotel>> getReserved();
+//    @Query("SELECT * FROM hotel WHERE isReserved=1")
+//    LiveData<List<Hotel>> getReserved();
 }

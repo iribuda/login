@@ -10,17 +10,19 @@ import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.san.R;
+import com.example.san.entities.BookedHotel;
 import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Hotel;
 import com.example.san.entities.Procedure;
 
-@Database(entities = {Procedure.class, BoughtProcedure.class, Hotel.class}, version = 9, exportSchema = false)
+@Database(entities = {Procedure.class, BoughtProcedure.class, Hotel.class, BookedHotel.class}, version = 11, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase instance;
     public abstract BoughtProcedureDao boughtProcedureDao();
     public abstract ProcedureDao procedureDao();
     public abstract HotelDao roomDao();
+    public abstract BookedHotelDao bookedHotelDao();
 
     public static synchronized AppDatabase getInstance(Context context){
         if(instance == null){
@@ -44,10 +46,12 @@ public abstract class AppDatabase extends RoomDatabase {
     public static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private ProcedureDao procedureDao;
         private HotelDao hotelDao;
+        private BookedHotelDao bookedHotelDao;
 
         private PopulateDbAsyncTask(AppDatabase database){
             procedureDao = database.procedureDao();
             hotelDao = database.roomDao();
+            bookedHotelDao = database.bookedHotelDao();
         }
 
         @Override
