@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe_navigation.xml"
-    app:startDestination="@id/navigation_info">
+    app:startDestination="@id/navigation_profile_page">
 
     <fragment
         android:id="@+id/navigation_booked_room"
@@ -30,5 +30,10 @@
         android:id="@+id/navigation_main_page"
         android:name="com.example.san.MainActivity"
         android:label="MainActivity" />
+    <fragment
+        android:id="@+id/navigation_profile_page"
+        android:name="com.example.san.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 
 </navigation>
