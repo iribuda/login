@@ -11,8 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.san.databinding.BoughtProcedureItemBinding;
-import com.example.san.databinding.ProcedureItemBinding;
-import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Procedure;
 import com.example.san.ui.procedures.ProcedureViewModel;
 import com.example.san.ui.procedures.ProceduresFragment;
@@ -24,7 +22,6 @@ public class ProcedureBoughtAdapter extends RecyclerView.Adapter<ProcedureBought
 
     private List<Procedure> procedures = new ArrayList<>();
     private ProcedureViewModel procedureViewModel;
-    private BoughtProcedureViewModel boughtProcedureViewModel;
     private ProceduresFragment proceduresFragment;
 
     @NonNull
@@ -102,11 +99,6 @@ public class ProcedureBoughtAdapter extends RecyclerView.Adapter<ProcedureBought
 
     public void setProceduresFragment(ProceduresFragment proceduresFragment){
         this.proceduresFragment = proceduresFragment;
-        notifyDataSetChanged();
-    }
-
-    public void setBoughtProcedureViewModel(BoughtProcedureViewModel boughtProcedureViewModel) {
-        this.boughtProcedureViewModel = boughtProcedureViewModel;
         notifyDataSetChanged();
     }
 }

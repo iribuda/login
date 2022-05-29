@@ -12,14 +12,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.san.R;
-import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Procedure;
 import com.example.san.databinding.FragmentBoughtProceduresBinding;
-import com.example.san.room.AppDatabase;
-import com.example.san.ui.procedures.ProcedureAdapter;
 import com.example.san.ui.procedures.ProcedureViewModel;
-import com.example.san.ui.procedures.ProceduresFragment;
 
 import java.util.List;
 
@@ -51,15 +46,6 @@ public class BoughtProceduresFragment extends Fragment {
                 adapter.setProcedureViewModel(procedureViewModel);
             }
         });
-
-//        final BoughtProcedureAdapter adapter = new BoughtProcedureAdapter();
-//        recyclerView.setAdapter(adapter);
-//        viewModel.getAllBoughtProcedures().observe(requireActivity(), new Observer<List<BoughtProcedure>>() {
-//            @Override
-//            public void onChanged(List<BoughtProcedure> boughtProcedures) {
-//                adapter.setBoughtProcedures(boughtProcedures);
-//            }
-//        });
 
         return root;
     }

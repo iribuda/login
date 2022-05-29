@@ -14,14 +14,12 @@ import android.view.ViewGroup;
 
 import com.example.san.databinding.FragmentProceduresBinding;
 import com.example.san.entities.Procedure;
-import com.example.san.ui.boughtProcedures.BoughtProcedureViewModel;
 
 import java.util.List;
 
 public class ProceduresFragment extends Fragment {
 
     private ProcedureViewModel procedureViewModel;
-    private BoughtProcedureViewModel boughtProcedureviewModel;
     private FragmentProceduresBinding binding;
 
     @Override
@@ -29,7 +27,6 @@ public class ProceduresFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         procedureViewModel = new ViewModelProvider(this).get(ProcedureViewModel.class);
-        boughtProcedureviewModel = new ViewModelProvider(this).get(BoughtProcedureViewModel.class);
 
         binding = FragmentProceduresBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -46,7 +43,6 @@ public class ProceduresFragment extends Fragment {
                 procedureAdapter.setProcedures(procedures);
                 procedureAdapter.setProcedureViewModel(procedureViewModel);
                 procedureAdapter.setProceduresFragment(ProceduresFragment.this);
-                procedureAdapter.setBoughtProcedureViewModel(boughtProcedureviewModel);
             }
         });
 

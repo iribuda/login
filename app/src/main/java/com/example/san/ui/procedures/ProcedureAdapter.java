@@ -1,26 +1,17 @@
 package com.example.san.ui.procedures;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.san.databinding.ProcedureItemBinding;
-import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Procedure;
-import com.example.san.room.AppDatabase;
-import com.example.san.ui.boughtProcedures.BoughtProcedureAdapter;
-import com.example.san.ui.boughtProcedures.BoughtProcedureViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +20,6 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
 
     private List<Procedure> procedures = new ArrayList<>();
     private ProcedureViewModel procedureViewModel;
-    private BoughtProcedureViewModel boughtProcedureViewModel;
     private ProceduresFragment proceduresFragment;
 
     @NonNull
@@ -62,8 +52,6 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
                 Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
 //                boughtProcedures.add(procedures.get(pos));
 //                procedureViewModel.setBoughtProcedures(boughtProcedures);
-                BoughtProcedure boughtProcedure = new BoughtProcedure(pickedProcedure.getName(),
-                        pickedProcedure.getPrice(), "27.05.2022", pickedProcedure.getPhotoResource());
 //                if(boughtProcedureViewModel.isAddToBoughtProcedure(boughtProcedure)!=1){
 //                    boughtProcedureViewModel.insert(boughtProcedure);
 //                }
@@ -136,8 +124,4 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
         notifyDataSetChanged();
     }
 
-    public void setBoughtProcedureViewModel(BoughtProcedureViewModel boughtProcedureViewModel) {
-        this.boughtProcedureViewModel = boughtProcedureViewModel;
-        notifyDataSetChanged();
-    }
 }

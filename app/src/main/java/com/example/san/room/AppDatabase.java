@@ -11,7 +11,6 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import com.example.san.R;
 import com.example.san.entities.BookedHotel;
-import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Hotel;
 import com.example.san.entities.Procedure;
 
