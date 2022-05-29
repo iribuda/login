@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">San</string>
+    <string name="profile">Профиль</string>
+    <string name="bookedRoom">Ваш номер</string>
+    <string name="procedures">Процедуры</string>
+    <string name="settings">Настройки</string>
+    <string name="boughtProcedures">Ваши процедуры</string>
+    <string name="others">Другие</string>
+    <string name="about">О нас</string>
+    <string name="orderRoom">Забронированная комната</string>
+    <string name="patient">Пациент</string>
+    <string name="mainPage">Главная страница</string>
+    <string name="action_1">Купить</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Привет пустой фрагмент</string>
+</resources>
