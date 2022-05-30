@@ -88,7 +88,7 @@ public abstract class AppDatabase extends RoomDatabase {
             hotelDao.insert(new Hotel(3, "Стандарт трехместный", R.drawable.b3));
             hotelDao.insert(new Hotel(4, "Люкс двухместный", R.drawable.b4));
 
-            boughtProcedureDao.insert(new BoughtProcedure("Kamisato Ayaka", 8500, "26.05.2022", R.drawable.a1));
+//            boughtProcedureDao.insert(new BoughtProcedure("Kamisato Ayaka", 8500, "26.05.2022", R.drawable.a1));
 
             procedureDao.insert(new Procedure("Акупунктура", 150, "14:00", "15:00", R.drawable.a1));
             procedureDao.insert(new Procedure("Траволечение", 120, "14:00", "15:00", R.drawable.a2));

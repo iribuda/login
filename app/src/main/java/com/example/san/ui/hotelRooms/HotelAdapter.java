@@ -18,13 +18,16 @@ import com.example.san.databinding.RoomItemBinding;
 import com.example.san.entities.BookedHotel;
 import com.example.san.entities.Hotel;
 import com.example.san.ui.bookedRoom.BookedHotelViewModel;
+import com.example.san.utils.DateValidatorReserved;
 import com.google.android.material.datepicker.CalendarConstraints;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -34,6 +37,8 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.RoomHolder>{
     private BookedHotelViewModel bookedHotelViewModel;
     private HotelsFragment hotelsFragment;
     private FragmentManager fragmentManager;
+
+    private Long startDate, endDate;
 
     @NonNull
     @Override
@@ -70,9 +75,12 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.RoomHolder>{
 
         CalendarConstraints.Builder constraintBuilder = new CalendarConstraints.Builder();
         constraintBuilder.setValidator(DateValidatorPointForward.now());
+//        if(startDate!= null && endDate != null) {
+//            constraintBuilder.setValidator(new DateValidatorReserved(startDate, endDate));
+//        }
 
         MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
-        builder.setTitleText("SELECT A DATE");
+        builder.setTitleText("Выберите дату");
         builder.setCalendarConstraints(constraintBuilder.build());
         final MaterialDatePicker materialDatePicker = builder.build();
 
@@ -82,10 +90,15 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.RoomHolder>{
                 materialDatePicker.show(fragmentManager, "DATE_PICKER");
             }
         });
-        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener() {
+        materialDatePicker.addOnPositiveButtonClickListener(new MaterialPickerOnPositiveButtonClickListener<Pair<Long, Long>>() {
             @Override
-            public void onPositiveButtonClick(Object selection) {
-                String date = materialDatePicker.getHeaderText();
+            public void onPositiveButtonClick(Pair<Long, Long> selection) {
+                startDate = selection.first;
+                endDate = selection.second;
+                Date date1 = new Date(startDate);
+                Date date2 = new Date(endDate);
+                SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+                String date = formatter.format(date1) + " - " + formatter.format(date2);
                 int pos = holder.getAdapterPosition();
                 Hotel pickedHotel = hotels.get(pos);
                 String message = "Вы забронировали комнату: " + pickedHotel.getName();
