@@ -1,15 +1,15 @@
 package com.example.san.entities;
 
 public class User {
-    public String id, name, mobieNum, email, date;
+    public String id, name, mobile, email, date;
 
     public User() {
     }
 
-    public User(String id, String name, String mobieNum, String email, String date) {
+    public User(String id, String name, String mobile, String email, String date) {
         this.id = id;
         this.name = name;
-        this.mobieNum = mobieNum;
+        this.mobile = mobile;
         this.email = email;
         this.date = date;
     }

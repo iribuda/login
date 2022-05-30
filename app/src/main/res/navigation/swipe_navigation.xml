@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_booked_room" />
     <fragment
         android:id="@+id/navigation_bought_procedures"
-        android:name="com.example.san.ui.boughtProcedures.BoughtProcedureFragment"
+        android:name="com.example.san.ui.boughtProcedures.BoughtProceduresFragment"
         android:label="fragment_bought_procedures"
         tools:layout="@layout/fragment_bought_procedures" />
     <fragment
@@ -20,14 +20,16 @@
         android:name="com.example.san.ui.info.InfoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.example.san.ui.info.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@xml/preferences"
+        />
     <activity
         android:id="@+id/navigation_main_page"
         android:name="com.example.san.MainActivity"
         android:label="MainActivity" />
-    <fragment
-        android:id="@+id/navigation_settings"
-        android:name="com.example.san.ui.info.SettingsFragment"
-        android:label="Настройки" />
     <fragment
         android:id="@+id/navigation_profile_page"
         android:name="com.example.san.ui.profile.ProfileFragment"

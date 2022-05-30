@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Desktop/login-ver10/app/src/main/res/layout/activity_patient.xml" value="0.18802083333333333" />
+        <entry key="..\:/Desktop/login-ver10/app/src/main/res/layout/fragment_edit_profile.xml" value="0.15534420289855072" />
+        <entry key="..\:/Desktop/login-ver10/app/src/main/res/layout/fragment_info.xml" value="0.15534420289855072" />
+        <entry key="..\:/Desktop/login-ver10/app/src/main/res/layout/fragment_profile.xml" value="0.1778115501519757" />
+        <entry key="..\:/Desktop/login-ver10/app/src/main/res/menu/swipe_nav_menu.xml" value="0.18697916666666667" />
         <entry key="..\:/Desktop/login-ver7/app/src/main/res/layout/bought_procedure_item.xml" value="0.32019927536231885" />
         <entry key="..\:/Users/User/AndroidStudioProjects/san/app/src/main/res/drawable-v24/ic_baseline_home_24.xml" value="0.146" />
         <entry key="..\:/Users/User/AndroidStudioProjects/san/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
