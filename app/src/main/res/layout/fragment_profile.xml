@@ -4,28 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/profile_background"
     tools:context=".ui.profile.ProfileFragment" >
 
-    <ImageView
-        android:id="@+id/background_top"
+    <LinearLayout
+        android:id="@+id/linearLayout_background"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:src="@drawable/back2"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/top_background"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageProfile"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:scaleType="centerCrop"
         android:src="@drawable/profile"
-        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background_top"
         app:riv_oval="true" />
 
     <TextView
@@ -58,7 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
+        android:paddingVertical="40dp"
         android:background="@drawable/white_background"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +70,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
@@ -167,14 +166,5 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <ImageView
-        android:id="@+id/background_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:src="@drawable/back3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
