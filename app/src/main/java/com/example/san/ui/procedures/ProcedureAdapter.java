@@ -22,7 +22,10 @@ import com.example.san.room.AppDatabase;
 import com.example.san.ui.boughtProcedures.BoughtProcedureAdapter;
 import com.example.san.ui.boughtProcedures.BoughtProcedureViewModel;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.ProcedureHolder> {
@@ -60,11 +63,11 @@ public class ProcedureAdapter extends RecyclerView.Adapter<ProcedureAdapter.Proc
                 Procedure pickedProcedure = procedures.get(pos);
                 String message = "Вы купили процедуру: " + pickedProcedure.getName();
                 Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-//                boughtProcedures.add(procedures.get(pos));
-//                procedureViewModel.setBoughtProcedures(boughtProcedures);
+                Date current = new Date();
+                SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
+                String date = formatter.format(current);
                 BoughtProcedure boughtProcedure = new BoughtProcedure(pickedProcedure.getName(),
-                        pickedProcedure.getPrice(), "27.05.2022", pickedProcedure.getPhotoResource());
-
+                        pickedProcedure.getPrice(), date, pickedProcedure.getPhotoResource());
                 boughtProcedureViewModel.insert(boughtProcedure);
 //                if(boughtProcedureViewModel.isAddToBoughtProcedure(boughtProcedure)!=1){
 //                    boughtProcedureViewModel.insert(boughtProcedure);

@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/navigation_profile_page"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/patient"
         android:title="@string/profile" />
 
     <item

@@ -20,6 +20,7 @@ import com.example.san.entities.Hotel;
 import com.example.san.ui.bookedRoom.BookedHotelViewModel;
 import com.example.san.utils.DateValidatorReserved;
 import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.CompositeDateValidator;
 import com.google.android.material.datepicker.DateValidatorPointForward;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
@@ -55,33 +56,24 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.RoomHolder>{
         holder.binding.hotelName.setText(hotel.getName());
         holder.binding.hotelImage.setImageResource(hotel.getPhotoResource());
 
-//        holder.binding.hotelBookButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                int pos = holder.getAdapterPosition();
-//                Hotel pickedHotel = hotels.get(pos);
-//                String message = "Вы забронировали комнату: " + pickedHotel.getName();
-//                Toast.makeText(view.getContext(), message, Toast.LENGTH_SHORT).show();
-//                pickedHotel.setIsReserved(1);
-//                hotelViewModel.update(pickedHotel);
-//            }
-//        });
+        MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
 
-        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
-        calendar.clear();
-
-        Long today = MaterialDatePicker.todayInUtcMilliseconds();
-        calendar.setTimeInMillis(today);
+//        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+//        calendar.clear();
+//        Long today = MaterialDatePicker.todayInUtcMilliseconds();
+//        calendar.setTimeInMillis(today);
 
         CalendarConstraints.Builder constraintBuilder = new CalendarConstraints.Builder();
-        constraintBuilder.setValidator(DateValidatorPointForward.now());
-//        if(startDate!= null && endDate != null) {
-//            constraintBuilder.setValidator(new DateValidatorReserved(startDate, endDate));
-//        }
+        ArrayList<CalendarConstraints.DateValidator> listValidators =
+                new ArrayList<CalendarConstraints.DateValidator>();
+        listValidators.add(DateValidatorPointForward.now());
+        CalendarConstraints.DateValidator validators = CompositeDateValidator.allOf(listValidators);
 
-        MaterialDatePicker.Builder<Pair<Long, Long>> builder = MaterialDatePicker.Builder.dateRangePicker();
+        constraintBuilder.setValidator(validators);
         builder.setTitleText("Выберите дату");
+        builder.setPositiveButtonText("Сохранить");
         builder.setCalendarConstraints(constraintBuilder.build());
+
         final MaterialDatePicker materialDatePicker = builder.build();
 
         holder.binding.hotelBookButton.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +97,11 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.RoomHolder>{
                 Toast.makeText(hotelsFragment.requireContext(), message, Toast.LENGTH_SHORT).show();
                 BookedHotel bookedHotel = new BookedHotel(pickedHotel.getName(), pickedHotel.getPhotoResource(), date);
                 bookedHotelViewModel.insert(bookedHotel);
+
+                listValidators.add(new DateValidatorReserved(startDate, endDate));
+                constraintBuilder.setValidator(validators);
+                builder.setCalendarConstraints(constraintBuilder.build());
+
             }
         });
 

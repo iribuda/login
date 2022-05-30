@@ -1,35 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/info_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.info.InfoFragment"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Для индивидуального и семейного отдыха и лечения "
+    <LinearLayout
+        android:id="@+id/linearLayout_background"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="@drawable/top_background"
+        android:orientation="vertical"
+        android:alpha="0.5"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:layout_gravity="center"
-        android:textSize="20sp"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo2"
+        app:riv_oval="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Особенность отдыха в санатории – это возможность заняться собственным здоровьем и совместить лечебные процедуры с привычным отдыхом. "
-        android:textSize="14sp"
-        android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="20dp"/>
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="200dp"
+        android:padding="16dp"
+        android:background="@drawable/white_background"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="В наших санаториях постояльцам предлагается широкая лечебно-профилактическая база для лечения различных заболеваний. Разнообразен и выбор процедур и оздоровительных услуг: начиная от физиотерапии, заканчивая ваннами с солью Мертвого моря."
-        android:textSize="14sp"
-        android:layout_marginTop="10dp"
-        android:layout_marginHorizontal="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Для индивидуального и семейного отдыха и лечения "
+            android:layout_gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center" />
 
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Особенность отдыха в санатории – это возможность заняться собственным здоровьем и совместить лечебные процедуры с привычным отдыхом. "
+            android:textSize="12sp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="В наших санаториях постояльцам предлагается широкая лечебно-профилактическая база для лечения различных заболеваний. Разнообразен и выбор процедур и оздоровительных услуг: начиная от физиотерапии, заканчивая ваннами с солью Мертвого моря."
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

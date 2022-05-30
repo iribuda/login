@@ -4,6 +4,8 @@ import android.os.Parcel;
 
 import com.google.android.material.datepicker.CalendarConstraints;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
@@ -38,13 +40,10 @@ public class DateValidatorReserved implements CalendarConstraints.DateValidator 
 
     @Override
     public boolean isValid(long date) {
-        Date current = new Date(date);
-        Date startDate = new Date(this.startDate);
-        Date endDate = new Date(this.endDate);
-        return current.before(endDate) && current.after(startDate);
-//        utc.setTimeInMillis(date);
-//        int dayOfWeek = utc.get(Calendar.DAY_OF_WEEK);
-//        return dayOfWeek != Calendar.SATURDAY && dayOfWeek != Calendar.SUNDAY;
+        if (date>=this.startDate && date<=this.endDate){
+            return false;
+        }
+        return true;
     }
 
     @Override

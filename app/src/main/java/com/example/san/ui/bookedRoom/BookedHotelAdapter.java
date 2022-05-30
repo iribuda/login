@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.san.databinding.BookedRoomItemBinding;
 import com.example.san.databinding.RoomItemBinding;
 import com.example.san.entities.BookedHotel;
 import com.example.san.entities.Hotel;
@@ -27,7 +28,7 @@ public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.
     @NonNull
     @Override
     public BookedHotelAdapter.RoomHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        RoomItemBinding binding = RoomItemBinding
+        BookedRoomItemBinding binding = BookedRoomItemBinding
                 .inflate(LayoutInflater.from(parent.getContext()), parent, false);
         return new BookedHotelAdapter.RoomHolder(binding);
     }
@@ -38,8 +39,7 @@ public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.
 
         holder.binding.hotelName.setText(hotel.getName());
         holder.binding.hotelImage.setImageResource(hotel.getPhotoResource());
-        holder.binding.hotelCardViews.setText(hotel.getDate());
-        holder.binding.hotelBookButton.setVisibility(View.INVISIBLE);
+        holder.binding.date.setText(hotel.getDate());
     }
 
     @Override
@@ -48,9 +48,9 @@ public class BookedHotelAdapter extends RecyclerView.Adapter<BookedHotelAdapter.
     }
 
     public static class RoomHolder extends RecyclerView.ViewHolder {
-        RoomItemBinding binding;
+        BookedRoomItemBinding binding;
 
-        public RoomHolder(@NonNull RoomItemBinding roomItemBinding) {
+        public RoomHolder(@NonNull BookedRoomItemBinding roomItemBinding) {
             super(roomItemBinding.getRoot());
             this.binding = roomItemBinding;
         }

@@ -13,21 +13,33 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceScreen;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.example.san.R;
 import com.example.san.ui.info.SettingsFragment;
+import com.example.san.utils.Constant;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class PatientActivity extends AppCompatActivity implements
         PreferenceFragmentCompat.OnPreferenceStartScreenCallback{
+
+    private DatabaseReference mDataBase;
+    private String USER_KEY = "User";
+
+    private TextView name, email, date, mobile, address;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
+
+        init();
+        getIntentMain();
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -67,5 +79,24 @@ public class PatientActivity extends AppCompatActivity implements
         return true;
     }
 
+    private void init(){
+        name = findViewById(R.id.txt_name);
+        email = findViewById(R.id.txt_email);
+        date = findViewById(R.id.txt_date);
+        mobile = findViewById(R.id.txt_mobile);
+        address = findViewById(R.id.txt_address);
 
+        mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
+    }
+
+    private void getIntentMain(){
+        Intent i = getIntent();
+        if (i != null){
+            name.setText(i.getStringExtra(Constant.USER_NAME));
+            email.setText(i.getStringExtra(Constant.USER_EMAIL));
+            date.setText(i.getStringExtra(Constant.USER_DATE));
+            mobile.setText(i.getStringExtra(Constant.USER_MOBILE));
+            address.setText(i.getStringExtra(Constant.USER_ADDRESS));
+        }
+    }
 }

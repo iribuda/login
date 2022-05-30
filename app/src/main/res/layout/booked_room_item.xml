@@ -37,24 +37,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="12dp">
 
             <TextView
                 android:id="@+id/hotelName"
-                android:layout_width="270dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
                 android:orientation="horizontal"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/hotelBookButton"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:text="Бронь"/>
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/hotelName"/>
 
         </RelativeLayout>
 
