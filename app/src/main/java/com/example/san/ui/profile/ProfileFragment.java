@@ -12,12 +12,16 @@ import android.view.ViewGroup;
 import com.example.san.R;
 import com.example.san.databinding.FragmentProceduresBinding;
 import com.example.san.databinding.FragmentProfileBinding;
+import com.example.san.ui.info.InfoFragment;
 import com.example.san.utils.Constant;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class ProfileFragment extends Fragment {
 
+    private FirebaseAuth mAuth;
     private DatabaseReference mDataBase;
     private String USER_KEY = "User";
     private FragmentProfileBinding binding;
@@ -28,15 +32,26 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
+        mAuth = FirebaseAuth.getInstance();
+//        Intent i = requireActivity().getIntent();
+//        if (i != null){
+//            binding.txtName.setText(i.getStringExtra(Constant.USER_NAME));
+//            binding.txtEmail.setText(i.getStringExtra(Constant.USER_EMAIL));
+//            binding.dateValue.setText(i.getStringExtra(Constant.USER_DATE));
+//            binding.mobileValue.setText(i.getStringExtra(Constant.USER_MOBILE));
+//            binding.addressValue.setText(i.getStringExtra(Constant.USER_ADDRESS));
+//        }
 
-        Intent i = requireActivity().getIntent();
-        if (i != null){
-            binding.txtName.setText(i.getStringExtra(Constant.USER_NAME));
-            binding.txtEmail.setText(i.getStringExtra(Constant.USER_EMAIL));
-            binding.dateValue.setText(i.getStringExtra(Constant.USER_DATE));
-            binding.mobileValue.setText(i.getStringExtra(Constant.USER_MOBILE));
-            binding.addressValue.setText(i.getStringExtra(Constant.USER_ADDRESS));
-        }
+        binding.btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InfoFragment nextFrag= new InfoFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.navHostFragment, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
+            }
+        });
 
         return root;
     }

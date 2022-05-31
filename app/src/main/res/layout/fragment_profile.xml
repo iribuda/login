@@ -6,33 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment" >
 
-    <ImageView
-        android:id="@+id/background_top"
+    <LinearLayout
+        android:id="@+id/linearLayout_background"
         android:layout_width="match_parent"
         android:layout_height="350dp"
-        android:src="@drawable/back2"
-        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/top_background"
+        android:orientation="vertical"
         tools:ignore="MissingConstraints" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/imageProfile"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:scaleType="centerCrop"
         android:src="@drawable/profile"
-        app:layout_constraintBaseline_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/background_top"
         app:riv_oval="true" />
 
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="John Smith"
+        android:text="Адис Керимов"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -45,7 +43,7 @@
         android:id="@+id/txt_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="john.smith@gmail.com"
+        android:text="kerimov.adis120402@gmail.com"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/txt_name"
@@ -58,7 +56,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="65dp"
+        android:paddingVertical="40dp"
         android:background="@drawable/white_background"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +69,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="20dp"
             android:orientation="horizontal"
             tools:ignore="MissingConstraints">
 
@@ -79,7 +77,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Date"
+                android:text="Дата"
                 android:textColor="#5917E1"
                 android:textSize="18dp" />
 
@@ -88,7 +86,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="25.09.2022"
+                android:text="31.05.2022"
                 android:textAlignment="viewEnd"
                 android:textColor="#5b5b5b"
                 android:textSize="18dp" />
@@ -108,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Mobile number"
+                android:text="Телефон"
                 android:textColor="#5917E1"
                 android:textSize="18dp" />
 
@@ -117,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+996 555 555 555"
+                android:text="0220 075 870"
                 android:textAlignment="viewEnd"
                 android:textColor="#5b5b5b"
                 android:textSize="18dp" />
@@ -158,7 +156,8 @@
         android:id="@+id/btn_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Edit Profile"
+        android:text="Узнать больше о нас"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:layout_marginHorizontal="20dp"
@@ -166,14 +165,5 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-    <ImageView
-        android:id="@+id/background_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="125dp"
-        android:src="@drawable/back3"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

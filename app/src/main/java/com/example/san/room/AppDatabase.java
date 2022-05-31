@@ -14,6 +14,7 @@ import com.example.san.entities.BookedHotel;
 import com.example.san.entities.BoughtProcedure;
 import com.example.san.entities.Hotel;
 import com.example.san.entities.Procedure;
+import com.example.san.entities.User;
 
 @Database(entities = {Procedure.class, BoughtProcedure.class, Hotel.class, BookedHotel.class}, version = 12, exportSchema = false)
 public abstract class AppDatabase extends RoomDatabase {
@@ -23,6 +24,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public abstract ProcedureDao procedureDao();
     public abstract HotelDao roomDao();
     public abstract BookedHotelDao bookedHotelDao();
+//    public abstract UserDao userDao();
 
     public static synchronized AppDatabase getInstance(Context context){
         if(instance == null){

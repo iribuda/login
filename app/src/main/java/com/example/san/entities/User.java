@@ -1,5 +1,7 @@
 package com.example.san.entities;
 
+import androidx.room.Entity;
+
 public class User {
     public String id, name, mobieNum, email, date;
 

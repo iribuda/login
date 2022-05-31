@@ -38,8 +38,8 @@ public class PatientActivity extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_patient);
 
-        init();
-        getIntentMain();
+//        init();
+//        getIntentMain();
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayout);
 
@@ -79,24 +79,24 @@ public class PatientActivity extends AppCompatActivity implements
         return true;
     }
 
-    private void init(){
-        name = findViewById(R.id.txt_name);
-        email = findViewById(R.id.txt_email);
-        date = findViewById(R.id.txt_date);
-        mobile = findViewById(R.id.txt_mobile);
-        address = findViewById(R.id.txt_address);
-
-        mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
-    }
-
-    private void getIntentMain(){
-        Intent i = getIntent();
-        if (i != null){
-            name.setText(i.getStringExtra(Constant.USER_NAME));
-            email.setText(i.getStringExtra(Constant.USER_EMAIL));
-            date.setText(i.getStringExtra(Constant.USER_DATE));
-            mobile.setText(i.getStringExtra(Constant.USER_MOBILE));
-            address.setText(i.getStringExtra(Constant.USER_ADDRESS));
-        }
-    }
+//    private void init(){
+//        name = findViewById(R.id.txt_name);
+//        email = findViewById(R.id.txt_email);
+//        date = findViewById(R.id.txt_date);
+//        mobile = findViewById(R.id.txt_mobile);
+//        address = findViewById(R.id.txt_address);
+//
+//        mDataBase = FirebaseDatabase.getInstance().getReference(USER_KEY);
+//    }
+//
+//    private void getIntentMain(){
+//        Intent i = getIntent();
+//        if (i != null){
+//            name.setText(i.getStringExtra(Constant.USER_NAME));
+//            email.setText(i.getStringExtra(Constant.USER_EMAIL));
+//            date.setText(i.getStringExtra(Constant.USER_DATE));
+//            mobile.setText(i.getStringExtra(Constant.USER_MOBILE));
+//            address.setText(i.getStringExtra(Constant.USER_ADDRESS));
+//        }
+//    }
 }
