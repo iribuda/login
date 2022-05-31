@@ -8,17 +8,17 @@
     <fragment
         android:id="@+id/navigation_procedures"
         android:name="com.example.san.ui.procedures.ProceduresFragment"
-        android:label="fragment_procedures"
+        android:label="Процедуры"
         tools:layout="@layout/fragment_procedures" />
     <fragment
         android:id="@+id/navigation_rooms"
         android:name="com.example.san.ui.hotelRooms.HotelsFragment"
-        android:label="fragment_rooms"
+        android:label="Комнаты"
         tools:layout="@layout/fragment_rooms" />
     <activity
         android:id="@+id/navigation_profile"
         android:name="com.example.san.ui.profile.PatientActivity"
-        android:label="activity_patient"
+        android:label="Профиль"
         tools:layout="@layout/activity_patient" />
 
 </navigation>

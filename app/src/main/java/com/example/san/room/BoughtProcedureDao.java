@@ -24,7 +24,7 @@ public interface BoughtProcedureDao {
     LiveData<List<BoughtProcedure>> getAll();
 
     @Query("SELECT EXISTS (SELECT 1 FROM bought_procedures WHERE id=:id)")
-    public int isAddToBoughtProcedure(int id);
+    int isAddToBoughtProcedure(int id);
 
 //    @Query("select COUNT (*) from bought_procedures")
 //    int countBoughtProcedure();
